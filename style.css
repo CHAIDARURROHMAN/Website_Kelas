@@ -1,0 +1,317 @@
+/* ======== PENGATURAN DASAR & FONT ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #f0f0f0; /* Warna teks utama (putih keabu-abuan) */
+    
+    /* === Latar Belakang Elegan (Gradient Gelap) === */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+}
+
+/* Animasi untuk latar belakang gradient */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+main {
+    padding: 80px 5% 20px; /* Beri ruang untuk nav di atas */
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #00f2ea; /* Warna aksen (cyan) */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* ======== NAVIGASI ======== */
+nav {
+    position: fixed; /* Tetap di atas saat scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    z-index: 1000;
+
+    /* Efek Glassmorphism untuk Nav */
+    background: rgba(25, 25, 40, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.nav-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Efek hover dan link aktif */
+.nav-links a:hover,
+.nav-links a.active {
+    background: #00f2ea; /* Warna aksen (cyan) */
+    color: #1a1a2e; /* Warna teks gelap saat aktif */
+    box-shadow: 0 0 15px rgba(0, 242, 234, 0.5);
+}
+
+/* ======== KONTEN SECTION (Halaman) ======== */
+.content-section {
+    display: none; /* Sembunyikan semua section by default */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.content-section.active {
+    display: block; /* Tampilkan hanya section yang aktif */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======== CARD (Glassmorphism) ======== */
+.card {
+    /* Efek Glassmorphism */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Kartu profil (Kepsek, Wali Kelas) */
+.profile-card {
+    text-align: center;
+}
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00f2ea;
+    margin-bottom: 15px;
+}
+.profile-card h3 {
+    font-size: 0.9rem;
+    color: #00f2ea;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.profile-card h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+/* Section Beranda */
+.hero-card {
+    text-align: center;
+    padding: 60px 30px;
+    background: rgba(0, 242, 234, 0.05); /* Sedikit aksen */
+    border-radius: 15px;
+}
+.hero-card h1 {
+    font-size: 4rem;
+    color: #fff;
+}
+.hero-card h2 {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    font-weight: 300;
+}
+.hero-card .tagline {
+    font-size: 1.1rem;
+    color: #00f2ea;
+    margin-top: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* ======== TABEL JADWAL & PIKET ======== */
+.tabs {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.tab-buttons {
+    display: flex;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.tab-btn, .tab-btn-piket {
+    flex-grow: 1;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #f0f0f0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.tab-btn:hover, .tab-btn-piket:hover {
+    background: rgba(0, 242, 234, 0.1);
+}
+.tab-btn.active, .tab-btn-piket.active {
+    background: #00f2ea;
+    color: #1a1a2e;
+    box-shadow: 0 0 15px rgba(0, 242, 234, 0.5);
+}
+
+.tab-content-container {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+
+.tab-content, .tab-content-piket {
+    display: none;
+    animation: fadeIn 0.3s;
+}
+.tab-content.active, .tab-content-piket.active {
+    display: block;
+}
+
+/* Styling Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+table th, table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+table th {
+    background: rgba(0, 242, 234, 0.1);
+    color: #00f2ea;
+    font-weight: 600;
+}
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ======== GALERI ======== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ======== SISWA ======== */
+.total-siswa {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #bbb;
+}
+.siswa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.siswa-card {
+    text-align: center;
+    padding: 15px;
+    position: relative;
+}
+.siswa-pic {
+    width: 100%;
+    height: 200px; /* Sesuaikan tinggi foto */
+    object-fit: cover;
+    object-position: top; /* Fokus ke wajah */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.siswa-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+.siswa-name {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.siswa-absen {
+    font-size: 0.9rem;
+    color: #00f2ea;
+}
