@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website XI RPL - SMKN Tambakboyo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <img src="logo.png" alt="Logo Sekolah">
+            <span>Website XI RPL</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#beranda" class="nav-link active" data-target="beranda">Beranda</a></li>
+            <li><a href="#struktur" class="nav-link" data-target="struktur">Struktur</a></li>
+            <li><a href="#guru" class="nav-link" data-target="guru">Guru</a></li>
+            <li><a href="#jadwal" class="nav-link" data-target="jadwal">Jadwal</a></li>
+            <li><a href="#piket" class="nav-link" data-target="piket">Piket</a></li>
+            <li><a href="#galeri" class="nav-link" data-target="galeri">Galeri</a></li>
+            <li><a href="#siswa" class="nav-link" data-target="siswa">Siswa</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="beranda" class="content-section active">
+            <div class="hero-card">
+                <h1>Kelas XI RPL</h1>
+                <h2>Rekayasa Perangkat Lunak - SMKN Tambakboyo</h2>
+                <p class="tagline">// Coding Today, Leading Tomorrow</p>
+            </div>
+        </section>
+
+        <section id="struktur" class="content-section">
+            <h1 class="section-title">Struktur Kelas XI RPL</h1>
+            <div class="card-container">
+                <div class="card profile-card">
+                    <img src="path/to/kepsek.jpg" alt="Foto Kepala Sekolah" class="profile-pic">
+                    <h3>KEPALA SEKOLAH SMKN TAMBAKBOYO</h3>
+                    <h2>AGUS SISWANTO, S.Pd., M.Pd</h2>
+                </div>
+                <div class="card profile-card">
+                    <img src="path/to/wali-kelas.jpg" alt="Foto Wali Kelas" class="profile-pic">
+                    <h3>WALI KELAS & GURU KIK</h3>
+                    <h2>YUNI PONCO HARIATI, S.SI</h2>
+                </div>
+                </div>
+        </section>
+        
+        <section id="guru" class="content-section">
+            <h1 class="section-title">Guru Pengajar XI RPL</h1>
+            <div class="card-container">
+                <div class="card profile-card-simple">
+                    <h2>Nama Guru, S.Pd</h2>
+                    <p>Mata Pelajaran</p>
+                </div>
+                <div class="card profile-card-simple">
+                    <h2>Nama Guru Lain, M.Kom</h2>
+                    <p>Mata Pelajaran Lain</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="jadwal" class="content-section">
+            <h1 class="section-title">Jadwal Pelajaran Kelas XI RPL</h1>
+            <div class="tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="senin">SENIN</button>
+                    <button class="tab-btn" data-tab="selasa">SELASA</button>
+                    <button class="tab-btn" data-tab="rabu">RABU</button>
+                    <button class="tab-btn" data-tab="kamis">KAMIS</button>
+                    <button class="tab-btn" data-tab="jumat">JUMAT</button>
+                </div>
+                
+                <div class="tab-content-container">
+                    <div id="senin" class="tab-content active">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>JAM KE-</th>
+                                    <th>WAKTU</th>
+                                    <th>MATA PELAJARAN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>07:00 - 07:40</td><td>-</td></tr>
+                                <tr><td>2</td><td>07:40 - 08:20</td><td>B.ING</td></tr>
+                                <tr><td>3</td><td>08:20 - 09:00</td><td>B.ING</td></tr>
+                                <tr><td>4</td><td>09:00 - 09:40</td><td>PJOK</td></tr>
+                                </tbody>
+                        </table>
+                    </div>
+                    <div id="selasa" class="tab-content">
+                        <p>Jadwal hari Selasa.</p>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="piket" class="content-section">
+            <h1 class="section-title">Jadwal Piket Kelas XI RPL</h1>
+            <div class="tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn-piket active" data-tab="senin-piket">SENIN</button>
+                    <button class="tab-btn-piket" data-tab="selasa-piket">SELASA</button>
+                    </div>
+                <div class="tab-content-container">
+                    <div id="senin-piket" class="tab-content-piket active">
+                        <table>
+                            <thead><tr><th>NO</th><th>NAMA PETUGAS</th></tr></thead>
+                            <tbody>
+                                <tr><td>1</td><td>Aisyah</td></tr>
+                                <tr><td>2</td><td>Aulia</td></tr>
+                                <tr><td>3</td><td>Safa</td></tr>
+                                <tr><td>4</td><td>Putri</td></tr>
+                                <tr><td>5</td><td>Dini</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="selasa-piket" class="tab-content-piket">
+                        <p>Petugas piket hari Selasa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeri" class="content-section">
+            <h1 class="section-title">Galeri Kelas</h1>
+            <div class="gallery-grid">
+                <img src="path/to/image1.jpg" alt="Galeri Foto 1">
+                <img src="path/to/image2.jpg" alt="Galeri Foto 2">
+                <img src="path/to/image3.jpg" alt="Galeri Foto 3">
+                <img src="path/to/image4.jpg" alt="Galeri Foto 4">
+                <img src="path/to/image5.jpg" alt="Galeri Foto 5">
+                <img src="path/to/image6.jpg" alt="Galeri Foto 6">
+            </div>
+        </section>
+
+        <section id="siswa" class="content-section">
+            <h1 class="section-title">Siswa Kelas XI RPL</h1>
+            <p class="total-siswa">Total: 35 Siswa</p>
+            <div class="siswa-grid">
+                <div class="card siswa-card">
+                    <div class="siswa-number">1</div>
+                    <img src="path/to/siswa1.jpg" alt="Foto Siswa" class="siswa-pic">
+                    <h3 class="siswa-name">Aisyah Hari Afika Liawati</h3>
+                    <p class="siswa-absen">Absen: 1</p>
+                </div>
+                <div class="card siswa-card">
+                    <div class="siswa-number">2</div>
+                    <img src="path/to/siswa2.jpg" alt="Foto Siswa" class="siswa-pic">
+                    <h3 class="siswa-name">Andika Wahyu Utama</h3>
+                    <p class="siswa-absen">Absen: 2</p>
+                </div>
+                </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
