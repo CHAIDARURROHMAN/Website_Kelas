@@ -5,51 +5,58 @@
     box-sizing: border-box;
 }
 
-/* === PERUBAHAN: Variabel Warna Baru (Charcoal/Gold) === */
-:root {
-    --bg-color-1: #1d1d1d;
-    --bg-color-2: #111111;
-    --bg-color-3: #0a0a0a;
-    --accent-color: #F9D949; /* Kuning Emas Cerah */
-    --text-color: #f5f5f5;
-    --text-dark: #111111;
-    --card-bg: rgba(30, 30, 30, 0.2); /* Glassmorphism lebih gelap */
-    --border-color: rgba(255, 255, 255, 0.1);
-}
-
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--text-color);
+    color: #f0f0f0; /* Warna teks utama (putih keabu-abuan) */
     
-    /* === Latar Belakang Elegan (Gradient Charcoal) === */
-    background: linear-gradient(135deg, var(--bg-color-1), var(--bg-color-2), var(--bg-color-3));
+    /* === Latar Belakang Elegan (Gradient Gelap) === */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     min-height: 100vh;
 }
 
+/* Animasi untuk latar belakang gradient */
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* ======== PERUBAHAN: NAVIGASI (SIDEBAR) ======== */
-.sidebar {
-    position: fixed; /* Tetap di kiri */
+main {
+    padding: 80px 5% 20px; /* Beri ruang untuk nav di atas */
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #00f2ea; /* Warna aksen (cyan) */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* ======== NAVIGASI ======== */
+nav {
+    position: fixed; /* Tetap di atas saat scroll */
     top: 0;
     left: 0;
-    width: 250px; /* Lebar sidebar */
-    height: 100vh; /* Setinggi layar */
+    width: 100%;
     display: flex;
-    flex-direction: column; /* Konten ditumpuk ke bawah */
-    padding: 25px 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
     z-index: 1000;
 
-    /* Efek Glassmorphism untuk Sidebar */
-    background: rgba(20, 20, 20, 0.3);
+    /* Efek Glassmorphism untuk Nav */
+    background: rgba(25, 25, 40, 0.3);
     backdrop-filter: blur(10px);
-    border-right: 1px solid var(--border-color); /* Batas di kanan */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-logo {
@@ -57,7 +64,6 @@ body {
     align-items: center;
     font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 40px; /* Jarak ke link */
 }
 
 .nav-logo img {
@@ -68,56 +74,34 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    flex-direction: column; /* Link ditumpuk ke bawah */
-    gap: 15px; /* Jarak antar link */
+    gap: 20px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
+    color: #f0f0f0;
     font-weight: 400;
-    font-size: 1.05rem;
-    padding: 10px 15px;
-    border-radius: 8px;
+    padding: 5px 10px;
+    border-radius: 5px;
     transition: all 0.3s ease;
-    
-    /* Untuk Ikon */
-    display: flex;
-    align-items: center;
-    gap: 12px;
 }
 
-.nav-links a .icon {
-    font-size: 1.3rem; /* Ukuran ikon */
-}
-
-/* Efek hover dan link aktif (WARNA BARU) */
-.nav-links a:hover {
-    background: var(--accent-color);
-    color: var(--text-dark);
-}
-
+/* Efek hover dan link aktif */
+.nav-links a:hover,
 .nav-links a.active {
-    background: var(--accent-color);
-    color: var(--text-dark);
-    box-shadow: 0 0 15px rgba(249, 217, 73, 0.4);
+    background: #00f2ea; /* Warna aksen (cyan) */
+    color: #1a1a2e; /* Warna teks gelap saat aktif */
+    box-shadow: 0 0 15px rgba(0, 242, 234, 0.5);
 }
 
-
-/* ======== PERUBAHAN: KONTEN UTAMA ======== */
-main {
-    /* Geser ke kanan selebar sidebar */
-    margin-left: 250px; 
-    padding: 40px 4%; /* Padding konten */
-}
-
+/* ======== KONTEN SECTION (Halaman) ======== */
 .content-section {
-    display: none;
+    display: none; /* Sembunyikan semua section by default */
     animation: fadeIn 0.5s ease-in-out;
 }
 
 .content-section.active {
-    display: block;
+    display: block; /* Tampilkan hanya section yang aktif */
 }
 
 @keyframes fadeIn {
@@ -125,22 +109,13 @@ main {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Judul Section (WARNA BARU) */
-.section-title {
-    font-size: 2.5rem;
-    color: #ffffff;
-    text-align: left; /* Rata kiri sekarang */
-    margin-bottom: 40px;
-    border-bottom: 3px solid var(--accent-color); /* Aksen Emas */
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
 /* ======== CARD (Glassmorphism) ======== */
 .card {
-    background: var(--card-bg); /* Warna baru */
+    /* Efek Glassmorphism */
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(15px);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -158,7 +133,7 @@ main {
     gap: 25px;
 }
 
-/* Kartu profil (WARNA BARU) */
+/* Kartu profil (Kepsek, Wali Kelas) */
 .profile-card {
     text-align: center;
 }
@@ -167,12 +142,12 @@ main {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--accent-color); /* Aksen Emas */
+    border: 3px solid #00f2ea;
     margin-bottom: 15px;
 }
 .profile-card h3 {
     font-size: 0.9rem;
-    color: var(--accent-color); /* Aksen Emas */
+    color: #00f2ea;
     font-weight: 400;
     margin-bottom: 5px;
 }
@@ -181,31 +156,30 @@ main {
     color: #ffffff;
 }
 
-/* Section Beranda (WARNA BARU) */
+/* Section Beranda */
 .hero-card {
     text-align: center;
     padding: 60px 30px;
-    background: rgba(249, 217, 73, 0.05); /* Tint Emas */
+    background: rgba(0, 242, 234, 0.05); /* Sedikit aksen */
     border-radius: 15px;
 }
-.hero-card h1 { font-size: 4rem; color: #fff; }
-.hero-card h2 { font-size: 1.5rem; color: #f0f0f0; font-weight: 300; }
+.hero-card h1 {
+    font-size: 4rem;
+    color: #fff;
+}
+.hero-card h2 {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    font-weight: 300;
+}
 .hero-card .tagline {
     font-size: 1.1rem;
-    color: var(--accent-color); /* Aksen Emas */
+    color: #00f2ea;
     margin-top: 15px;
     font-family: 'Courier New', Courier, monospace;
 }
-/* Kartu info tambahan di Beranda */
-.info-card {
-    text-align: center;
-}
-.info-card h3 {
-    color: var(--accent-color);
-    font-weight: 400;
-}
 
-/* ======== TABEL JADWAL & PIKET (WARNA BARU) ======== */
+/* ======== TABEL JADWAL & PIKET ======== */
 .tabs {
     width: 100%;
     max-width: 900px;
@@ -224,34 +198,36 @@ main {
     font-size: 1rem;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    color: var(--text-color);
+    color: #f0f0f0;
     background: transparent;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 .tab-btn:hover, .tab-btn-piket:hover {
-    background: rgba(249, 217, 73, 0.1); /* Hover Emas */
+    background: rgba(0, 242, 234, 0.1);
 }
 .tab-btn.active, .tab-btn-piket.active {
-    background: var(--accent-color); /* Aksen Emas */
-    color: var(--text-dark);
-    box-shadow: 0 0 15px rgba(249, 217, 73, 0.4);
+    background: #00f2ea;
+    color: #1a1a2e;
+    box-shadow: 0 0 15px rgba(0, 242, 234, 0.5);
 }
 
 .tab-content-container {
     padding: 20px;
-    background: var(--card-bg); /* Warna card */
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 10px;
 }
+
 .tab-content, .tab-content-piket {
-    display: none; animation: fadeIn 0.3s;
+    display: none;
+    animation: fadeIn 0.3s;
 }
 .tab-content.active, .tab-content-piket.active {
     display: block;
 }
 
-/* Styling Tabel (WARNA BARU) */
+/* Styling Tabel */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -259,14 +235,16 @@ table {
 }
 table th, table td {
     padding: 12px 15px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 table th {
-    background: rgba(249, 217, 73, 0.1); /* Header Emas */
-    color: var(--accent-color);
+    background: rgba(0, 242, 234, 0.1);
+    color: #00f2ea;
     font-weight: 600;
 }
-table tbody tr:last-child td { border-bottom: none; }
+table tbody tr:last-child td {
+    border-bottom: none;
+}
 table tbody tr:hover {
     background: rgba(255, 255, 255, 0.05);
 }
@@ -289,7 +267,7 @@ table tbody tr:hover {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* ======== SISWA (WARNA BARU) ======== */
+/* ======== SISWA ======== */
 .total-siswa {
     text-align: center;
     font-size: 1.1rem;
@@ -308,9 +286,9 @@ table tbody tr:hover {
 }
 .siswa-pic {
     width: 100%;
-    height: 200px;
+    height: 200px; /* Sesuaikan tinggi foto */
     object-fit: cover;
-    object-position: top;
+    object-position: top; /* Fokus ke wajah */
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -335,5 +313,5 @@ table tbody tr:hover {
 }
 .siswa-absen {
     font-size: 0.9rem;
-    color: var(--accent-color); /* Aksen Emas */
+    color: #00f2ea;
 }
