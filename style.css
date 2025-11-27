@@ -156,7 +156,7 @@ nav {
     justify-content: center;
 }
 
-/* Styling Card Utama (Hanya class .card) */
+/* Styling Card Utama (Hanya class .card dan .profile-card) */
 .card, .profile-card { 
     background: var(--bg-card);
     backdrop-filter: blur(10px);
