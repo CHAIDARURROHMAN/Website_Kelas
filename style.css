@@ -156,8 +156,7 @@ nav {
     justify-content: center;
 }
 
-/* Styling Card Utama (Hanya class .card) */
-.card, .profile-card { 
+.card {
     background: var(--bg-card);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(212, 175, 55, 0.2); /* Border emas tipis */
@@ -167,13 +166,11 @@ nav {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
 }
 
-/* Efek Hover untuk SEMUA Card */
-.card:hover, .profile-card:hover { 
+.card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border-color: var(--gold-main); /* Border menyala saat hover */
 }
-
 
 /* --- 4. HALAMAN BERANDA (HERO) --- */
 .hero-card {
@@ -211,7 +208,6 @@ nav {
 }
 
 /* --- 5. STRUKTUR & GURU --- */
-/* Styling untuk Foto Profil di SEMUA Card */
 .profile-pic {
     width: 140px;
     height: 140px;
@@ -222,7 +218,6 @@ nav {
     margin-bottom: 20px;
 }
 
-/* Styling untuk Jabatan (h3) */
 .profile-card h3 {
     font-size: 0.9rem;
     color: var(--gold-main);
@@ -230,18 +225,15 @@ nav {
     text-transform: uppercase;
 }
 
-/* Styling untuk Nama (h2) */
-.profile-card h2 { 
+.profile-card h2, 
+.profile-card-simple h2 {
     font-size: 1.3rem;
     color: #fff;
 }
 
-/* Styling untuk Keterangan/Gelar (p) */
-.profile-card p {
+.profile-card-simple p {
     color: #aaa;
-    font-size: 1rem;
 }
-
 
 /* --- 6. TABEL JADWAL & PIKET --- */
 .tabs {
