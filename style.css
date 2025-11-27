@@ -156,9 +156,8 @@ nav {
     justify-content: center;
 }
 
-/* Styling Card Utama (profile-card) */
-/* CLASS INI JUGA BERLAKU UNTUK profile-card-simple karena kita ingin tampilan dasar yang sama */
-.card, .profile-card-simple { /* Tambahkan .profile-card-simple di sini */
+/* Styling Card Utama (Hanya class .card) */
+.card, .profile-card { 
     background: var(--bg-card);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(212, 175, 55, 0.2); /* Border emas tipis */
@@ -169,7 +168,7 @@ nav {
 }
 
 /* Efek Hover untuk SEMUA Card */
-.card:hover, .profile-card-simple:hover { /* Tambahkan .profile-card-simple:hover di sini */
+.card:hover, .profile-card:hover { 
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border-color: var(--gold-main); /* Border menyala saat hover */
@@ -224,8 +223,7 @@ nav {
 }
 
 /* Styling untuk Jabatan (h3) */
-.profile-card h3,
-.profile-card-simple h3 {
+.profile-card h3 {
     font-size: 0.9rem;
     color: var(--gold-main);
     margin-bottom: 5px;
@@ -233,15 +231,13 @@ nav {
 }
 
 /* Styling untuk Nama (h2) */
-.profile-card h2, 
-.profile-card-simple h2 {
+.profile-card h2 { 
     font-size: 1.3rem;
     color: #fff;
 }
 
 /* Styling untuk Keterangan/Gelar (p) */
-.profile-card p,
-.profile-card-simple p {
+.profile-card p {
     color: #aaa;
     font-size: 1rem;
 }
