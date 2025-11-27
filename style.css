@@ -157,7 +157,8 @@ nav {
 }
 
 /* Styling Card Utama (profile-card) */
-.card {
+/* CLASS INI JUGA BERLAKU UNTUK profile-card-simple karena kita ingin tampilan dasar yang sama */
+.card, .profile-card-simple { /* Tambahkan .profile-card-simple di sini */
     background: var(--bg-card);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(212, 175, 55, 0.2); /* Border emas tipis */
@@ -167,31 +168,13 @@ nav {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
 }
 
-.card:hover {
+/* Efek Hover untuk SEMUA Card */
+.card:hover, .profile-card-simple:hover { /* Tambahkan .profile-card-simple:hover di sini */
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border-color: var(--gold-main); /* Border menyala saat hover */
 }
 
-/* Styling Card Simple (profile-card-simple) - TAMBAHAN */
-.profile-card-simple {
-    /* Menyalin styling card agar tampilan sama */
-    background: var(--bg-card);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(212, 175, 55, 0.2); 
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
-}
-
-.profile-card-simple:hover {
-    /* Menyalin efek hover card */
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-color: var(--gold-main);
-}
-/* AKHIR TAMBAHAN CARD SIMPLE */
 
 /* --- 4. HALAMAN BERANDA (HERO) --- */
 .hero-card {
@@ -229,7 +212,7 @@ nav {
 }
 
 /* --- 5. STRUKTUR & GURU --- */
-/* Styling untuk Foto Profil di SEMUA Card (profile-card & profile-card-simple) */
+/* Styling untuk Foto Profil di SEMUA Card */
 .profile-pic {
     width: 140px;
     height: 140px;
@@ -262,6 +245,7 @@ nav {
     color: #aaa;
     font-size: 1rem;
 }
+
 
 /* --- 6. TABEL JADWAL & PIKET --- */
 .tabs {
