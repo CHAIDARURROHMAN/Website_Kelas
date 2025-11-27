@@ -1,446 +1,474 @@
 /* =========================================
-   THEMA: BLACK & GOLD LUXURY
-   PROJECT: WEBSITE KELAS XI RPL
-   ========================================= */
+   THEMA: BLACK & GOLD LUXURY
+   PROJECT: WEBSITE KELAS XI RPL
+   ========================================= */
 
 /* --- 1. VARIABEL & RESET --- */
 :root {
-    /* Palet Warna */
-    --gold-main: #D4AF37;       /* Emas Metalik Utama */
-    --gold-hover: #F4C430;      /* Emas lebih terang */
-    --gold-glow: rgba(212, 175, 55, 0.5); /* Efek cahaya emas */
-    --bg-dark: #050505;         /* Hitam pekat */
-    --bg-card: rgba(30, 30, 30, 0.6); /* Warna kartu semi-transparan */
-    --text-white: #f0f0f0;      /* Putih gading untuk teks bacaan */
-    --text-gold: #FFD700;       /* Kuning Emas untuk teks highlight */
+    /* Palet Warna */
+    --gold-main: #D4AF37;       /* Emas Metalik Utama */
+    --gold-hover: #F4C430;      /* Emas lebih terang */
+    --gold-glow: rgba(212, 175, 55, 0.5); /* Efek cahaya emas */
+    --bg-dark: #050505;         /* Hitam pekat */
+    --bg-card: rgba(30, 30, 30, 0.6); /* Warna kartu semi-transparan */
+    --text-white: #f0f0f0;      /* Putih gading untuk teks bacaan */
+    --text-gold: #FFD700;       /* Kuning Emas untuk teks highlight */
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-white);
-    /* Latar Belakang Animasi Gradasi Gelap */
-    background: linear-gradient(135deg, #000000, #1c1c1c, #2b2b2b);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-white);
+    /* Latar Belakang Animasi Gradasi Gelap */
+    background: linear-gradient(135deg, #000000, #1c1c1c, #2b2b2b);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
 }
 
 @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 main {
-    padding: 100px 5% 40px; /* Jarak atas untuk Navigasi */
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 100px 5% 40px; /* Jarak atas untuk Navigasi */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h1, h2, h3 {
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 /* Judul Per Bagian (Struktur, Guru, dll) */
 .section-title {
-    font-size: 2.5rem;
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 50px;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
 }
 
 /* Garis bawah judul berwarna Emas */
 .section-title::after {
-    content: '';
-    display: block;
-    width: 60%;
-    height: 3px;
-    background: var(--gold-main);
-    margin: 5px auto 0;
-    border-radius: 2px;
-    box-shadow: 0 0 10px var(--gold-glow);
+    content: '';
+    display: block;
+    width: 60%;
+    height: 3px;
+    background: var(--gold-main);
+    margin: 5px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--gold-glow);
 }
 
 /* --- 2. NAVIGASI (GLASSMORPHISM) --- */
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    z-index: 1000;
-    
-    background: rgba(0, 0, 0, 0.8); /* Hitam transparan */
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3); /* Garis bawah emas tipis */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    z-index: 1000;
+    
+    background: rgba(0, 0, 0, 0.8); /* Hitam transparan */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3); /* Garis bawah emas tipis */
 }
 
 .nav-logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--gold-main);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .nav-logo img {
-    height: 40px;
-    margin-right: 10px;
-    filter: drop-shadow(0 0 2px var(--gold-main));
+    height: 40px;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 2px var(--gold-main));
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+    list-style: none;
+    display: flex;
+    gap: 15px;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 0.95rem;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 /* Efek Hover & Aktif pada Menu */
 .nav-links a:hover,
 .nav-links a.active {
-    background: var(--gold-main);
-    color: #000000; /* Teks jadi hitam biar kontras */
-    box-shadow: 0 0 15px var(--gold-glow);
-    font-weight: 600;
+    background: var(--gold-main);
+    color: #000000; /* Teks jadi hitam biar kontras */
+    box-shadow: 0 0 15px var(--gold-glow);
+    font-weight: 600;
 }
 
 /* --- 3. KOMPONEN KARTU (CARD) --- */
 .content-section {
-    display: none;
-    animation: fadeIn 0.6s ease-out;
+    display: none;
+    animation: fadeIn 0.6s ease-out;
 }
 
 .content-section.active {
-    display: block;
+    display: block;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
 }
 
+/* Styling Card Utama (profile-card) */
 .card {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2); /* Border emas tipis */
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--gold-main); /* Border menyala saat hover */
+}
+
+/* Styling Card Simple (profile-card-simple) - TAMBAHAN */
+.profile-card-simple {
+    /* Menyalin styling card agar tampilan sama */
     background: var(--bg-card);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(212, 175, 55, 0.2); /* Border emas tipis */
+    border: 1px solid rgba(212, 175, 55, 0.2); 
     border-radius: 20px;
     padding: 30px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
 }
 
-.card:hover {
+.profile-card-simple:hover {
+    /* Menyalin efek hover card */
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-color: var(--gold-main); /* Border menyala saat hover */
+    border-color: var(--gold-main);
 }
+/* AKHIR TAMBAHAN CARD SIMPLE */
 
 /* --- 4. HALAMAN BERANDA (HERO) --- */
 .hero-card {
-    text-align: center;
-    padding: 80px 20px;
-    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1), transparent);
-    border: 1px solid var(--gold-main);
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 80px 20px;
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1), transparent);
+    border: 1px solid var(--gold-main);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .hero-card h1 {
-    font-size: 4rem;
-    /* Efek Teks Emas Mengkilap */
-    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 10px;
-    text-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+    font-size: 4rem;
+    /* Efek Teks Emas Mengkilap */
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+    text-shadow: 0px 5px 10px rgba(0,0,0,0.5);
 }
 
 .hero-card h2 {
-    font-size: 1.5rem;
-    color: #fff;
-    font-weight: 300;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 300;
 }
 
 .tagline {
-    font-family: 'Courier New', monospace;
-    color: var(--gold-main);
-    margin-top: 20px;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
+    color: var(--gold-main);
+    margin-top: 20px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
 }
 
 /* --- 5. STRUKTUR & GURU --- */
+/* Styling untuk Foto Profil di SEMUA Card (profile-card & profile-card-simple) */
 .profile-pic {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--gold-main);
-    box-shadow: 0 0 15px var(--gold-glow);
-    margin-bottom: 20px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--gold-main);
+    box-shadow: 0 0 15px var(--gold-glow);
+    margin-bottom: 20px;
 }
 
-.profile-card h3 {
-    font-size: 0.9rem;
-    color: var(--gold-main);
-    margin-bottom: 5px;
-    text-transform: uppercase;
+/* Styling untuk Jabatan (h3) */
+.profile-card h3,
+.profile-card-simple h3 {
+    font-size: 0.9rem;
+    color: var(--gold-main);
+    margin-bottom: 5px;
+    text-transform: uppercase;
 }
 
-.profile-card h2, 
+/* Styling untuk Nama (h2) */
+.profile-card h2, 
 .profile-card-simple h2 {
-    font-size: 1.3rem;
-    color: #fff;
+    font-size: 1.3rem;
+    color: #fff;
 }
 
+/* Styling untuk Keterangan/Gelar (p) */
+.profile-card p,
 .profile-card-simple p {
-    color: #aaa;
+    color: #aaa;
+    font-size: 1rem;
 }
 
 /* --- 6. TABEL JADWAL & PIKET --- */
 .tabs {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .tab-buttons {
-    display: flex;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 5px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    flex-wrap: wrap; /* Agar rapi di HP */
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap; /* Agar rapi di HP */
 }
 
 .tab-btn, .tab-btn-piket {
-    flex: 1;
-    padding: 12px 15px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    background: transparent;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
-    min-width: 80px; /* Lebar minimal untuk HP */
+    flex: 1;
+    padding: 12px 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 80px; /* Lebar minimal untuk HP */
 }
 
 /* Tombol Tab Aktif */
-.tab-btn.active, 
+.tab-btn.active, 
 .tab-btn-piket.active {
-    background: var(--gold-main);
-    color: #000;
-    box-shadow: 0 0 15px var(--gold-glow);
+    background: var(--gold-main);
+    color: #000;
+    box-shadow: 0 0 15px var(--gold-glow);
 }
 
-.tab-btn:hover:not(.active), 
+.tab-btn:hover:not(.active), 
 .tab-btn-piket:hover:not(.active) {
-    color: var(--gold-main);
+    color: var(--gold-main);
 }
 
 .tab-content-container {
-    background: rgba(20, 20, 20, 0.8);
-    border: 1px solid var(--gold-main);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid var(--gold-main);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .tab-content, .tab-content-piket {
-    display: none;
-    animation: fadeIn 0.3s;
+    display: none;
+    animation: fadeIn 0.3s;
 }
 
 .tab-content.active, .tab-content-piket.active {
-    display: block;
+    display: block;
 }
 
 /* Styling Tabel Dalam */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
 }
 
 table th {
-    text-align: left;
-    padding: 15px;
-    background: rgba(212, 175, 55, 0.15); /* Emas transparan */
-    color: var(--gold-main);
-    border-bottom: 2px solid var(--gold-main);
+    text-align: left;
+    padding: 15px;
+    background: rgba(212, 175, 55, 0.15); /* Emas transparan */
+    color: var(--gold-main);
+    border-bottom: 2px solid var(--gold-main);
 }
 
 table td {
-    padding: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: #ddd;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ddd;
 }
 
 table tbody tr:hover {
-    background: rgba(212, 175, 55, 0.05);
+    background: rgba(212, 175, 55, 0.05);
 }
 
 /* --- 7. GALERI --- */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 
 .gallery-grid img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-grid img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 5px 20px var(--gold-glow);
-    border-color: var(--gold-main);
+    transform: scale(1.03);
+    box-shadow: 0 5px 20px var(--gold-glow);
+    border-color: var(--gold-main);
 }
 
 /* --- 8. SISWA --- */
 .total-siswa {
-    text-align: center;
-    color: var(--gold-main);
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    font-weight: 600;
+    text-align: center;
+    color: var(--gold-main);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-weight: 600;
 }
 
 .siswa-grid {
-    display: grid;
-    /* Grid responsif yang rapi */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
+    display: grid;
+    /* Grid responsif yang rapi */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
 }
 
 .siswa-card {
-    position: relative;
-    padding: 20px;
+    position: relative;
+    padding: 20px;
 }
 
 .siswa-pic {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    object-position: top center;
-    border-radius: 10px;
-    border: 2px solid var(--gold-main);
-    margin-bottom: 15px;
-    transition: filter 0.3s;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 10px;
+    border: 2px solid var(--gold-main);
+    margin-bottom: 15px;
+    transition: filter 0.3s;
 }
 
 /* Efek hitam putih kalau tidak di hover (opsional - hapus jika tidak suka) */
 .siswa-card:hover .siswa-pic {
-    filter: brightness(1.1);
+    filter: brightness(1.1);
 }
 
 .siswa-number {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: var(--gold-main);
-    color: #000;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    z-index: 2;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--gold-main);
+    color: #000;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    z-index: 2;
 }
 
 .siswa-name {
-    font-size: 1rem;
-    color: #fff;
-    margin-bottom: 5px;
-    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
 .siswa-absen {
-    font-size: 0.85rem;
-    color: var(--gold-main);
-    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--gold-main);
+    font-style: italic;
 }
 
 /* --- 9. RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        padding: 10px;
-    }
-    
-    .nav-links {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 5px;
-    }
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
 
-    .nav-links a {
-        font-size: 0.8rem;
-        padding: 5px 10px;
-    }
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
 
-    .hero-card h1 {
-        font-size: 2.5rem; /* Judul lebih kecil di HP */
-    }
+    .hero-card h1 {
+        font-size: 2.5rem; /* Judul lebih kecil di HP */
+    }
 
-    .section-title {
-        font-size: 2rem;
-    }
+    .section-title {
+        font-size: 2rem;
+    }
 
-    table th, table td {
-        padding: 10px 5px;
-        font-size: 0.9rem;
-    }
+    table th, table td {
+        padding: 10px 5px;
+        font-size: 0.9rem;
+    }
 }
